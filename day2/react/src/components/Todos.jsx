@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux"
 import {sort} from '../Redux/Todos/action'
 import { getTodos } from '../Redux/Todos/action'
 import {Link } from 'react-router-dom'
+import { Navigate } from "react-router-dom"
 // import {filter} from '../Redux/Todos/action'
 import { deleteTodo,toggleTodo } from "../Redux/Todos/action"
 
@@ -43,6 +44,7 @@ useEffect(()=>{
     dispatch(getTodos())
     
 },[])
+ 
 
 //  const getData = ()=>{
 //   fetch(`http://localhost:8080/todos`)
@@ -51,10 +53,15 @@ useEffect(()=>{
 //     dispatch(addTodos(data))
 //     })
 // }
+   
     
     return (
       
     <div>
+        <Link to={'/login'}>
+        <h4>login</h4>
+        </Link>
+        
       <h1>TODOS LIST</h1>
         <input type="text" placeholder="filter todos"
         onChange={(e)=>{

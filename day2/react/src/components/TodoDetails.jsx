@@ -15,7 +15,7 @@ export const TodoDetails =() => {
 
   
     const todos = useSelector((store) => store.todos.todos)
-
+    
    
        const getTodoById = ()=>{
     fetch(`http://localhost:8080/todos/${id}`)
@@ -30,7 +30,9 @@ export const TodoDetails =() => {
         
     },[])
 
-
+    
+       
+    
     
         return (
             <div>

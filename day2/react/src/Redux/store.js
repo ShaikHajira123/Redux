@@ -1,17 +1,18 @@
 import {legacy_createStore as createStore , combineReducers, applyMiddleware} from 'redux'
  import { counterReducer } from './Counter/reducer'
 import { todosReducer } from './Todos/reducer'
-
+import { authReducer } from './Auth/reducer'
 
 const rootReducer = combineReducers({
   counter:counterReducer,
   todos:todosReducer,
+  auth:authReducer,
    
 })
 
 
 const middleware = (store) => (next) => (action) => {
-  //console.log(action)
+  console.log(action)
   if(typeof action ==='function'){
    return  action(store.dispatch)
   }

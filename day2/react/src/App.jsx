@@ -4,6 +4,7 @@ import {Counter } from './components/Counter'
 import {Todos } from './components/Todos'
 import {Routes,Route} from 'react-router-dom'
 import {TodoDetails} from './components/TodoDetails'
+import {Login} from './components/Login'
 
 function App() {
   
@@ -14,9 +15,10 @@ function App() {
      <Routes>
      <Route path='/' element={<Todos />}></Route>
      <Route path='/todo/:id' element={<TodoDetails/>}></Route>
+     <Route path='login' element = {<Login/>}></Route>
      </Routes>
      
-     {/* <DeleteTodo /> */}
+  
  </div>
   )
 }
