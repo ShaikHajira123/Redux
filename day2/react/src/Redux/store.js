@@ -6,11 +6,12 @@ import { todosReducer } from './Todos/reducer'
 const rootReducer = combineReducers({
   counter:counterReducer,
   todos:todosReducer,
+   
 })
 
 
-const loggerMiddleware = (store) => (next) => (action) => {
-  console.log(action)
+const middleware = (store) => (next) => (action) => {
+  //console.log(action)
   if(typeof action ==='function'){
    return  action(store.dispatch)
   }
@@ -19,11 +20,11 @@ const loggerMiddleware = (store) => (next) => (action) => {
 }
 export const store = createStore(
   rootReducer,
-  applyMiddleware(loggerMiddleware)
-  //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+ applyMiddleware(middleware)
+ //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 
-store.subscribe(()=>{
-  console.log(store.getState())
-})
+// store.subscribe(()=>{
+//   console.log(store.getState())
+// })

@@ -1,7 +1,7 @@
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import {addCount} from '../Redux/action'
+import {addCount} from '../Redux/Counter/action'
 
 
 

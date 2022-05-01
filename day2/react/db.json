@@ -1,3 +1,24 @@
-
-
-   
+{
+  "todos": [
+    {
+      "title": "learn redux",
+      "status": true,
+      "id": "0"
+    },
+    {
+      "title": "learn react",
+      "status": true,
+      "id": "z"
+    },
+    {
+      "title": "learn vite",
+      "status": true,
+      "id": "s"
+    },
+    {
+      "title": [],
+      "status": true,
+      "id": "o"
+    }
+  ]
+}
