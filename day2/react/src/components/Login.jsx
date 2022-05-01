@@ -5,7 +5,7 @@ import {isAuth} from '../Redux/Auth/action';
 
 
 export const Login = () => {
-    const userauth = useSelector((store)=>store.auth.auth)
+    const userauth = useSelector((store)=>store.isauth.isauth)
     const navigate = useNavigate()
     const dispatch =useDispatch()
 
@@ -42,8 +42,8 @@ export const Login = () => {
 
       }else{
           localStorage.setItem("authenticate token",data.token)
-          dispatch(isAuth({auth:true}))
-          navigate(-1)
+          dispatch(isAuth({isauth:true}))
+          navigate(-1,{replace:true})
       }
     }
 

@@ -6,7 +6,7 @@ import { authReducer } from './Auth/reducer'
 const rootReducer = combineReducers({
   counter:counterReducer,
   todos:todosReducer,
-  auth:authReducer,
+  isauth:authReducer,
    
 })
 
@@ -26,6 +26,6 @@ export const store = createStore(
 )
 
 
-// store.subscribe(()=>{
-//   console.log(store.getState())
-// })
+store.subscribe(()=>{
+  console.log(store.getState())
+})

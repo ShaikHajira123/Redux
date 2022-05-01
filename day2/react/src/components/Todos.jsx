@@ -45,6 +45,11 @@ useEffect(()=>{
     
 },[])
  
+const authed = localStorage.getItem('authenticates')
+      
+// if(authed ===false){
+//     return <Navigate to ={'/login'}/>
+// }
 
 //  const getData = ()=>{
 //   fetch(`http://localhost:8080/todos`)
@@ -83,9 +88,14 @@ useEffect(()=>{
         
           return (
             <div>
-            <Link to={`/todo/${todo.id}`}>
+                {authed===true ?
+       <Link to={`/todo/${todo.id}`}>
             <h3 key={todo.title}>{todo.id}.{todo.title}- </h3>
-                </Link>
+                </Link> :  <Link to={`/login`}>
+            <h3 key={todo.title}>{todo.id}.{todo.title}- </h3></Link>}
+            
+
+           
                 {todo.status?"completed":"notcompleted"}
                 <button onClick={()=>{
          dispatch(deleteTodo(todo.id))
