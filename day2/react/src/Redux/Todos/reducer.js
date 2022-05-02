@@ -29,10 +29,10 @@ export const todosReducer=(store = init,{type,payload})=>{
             case TOGGLE_TODO:
             return {
                 ...store,
-                todos:store.todos.map((e)=>e.id === payload ? { status :!e.status} : e ),
+                todos:store.todos.map((e)=>e.id === payload ?  {status :!e.status} : e ),
             };
             default:
-                return store
+                return {...store}
     }
 }
 
